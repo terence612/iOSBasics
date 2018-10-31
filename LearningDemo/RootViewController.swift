@@ -49,6 +49,28 @@ class RootViewController: UIViewController {
     @objc func performPushNavigation() {
         let contentView = ContentViewController()
         contentView.titleLabel.text = "Content View"
-        self.navigationController?.pushViewController(contentView, animated: true)
+
+        //Method 1, guard let
+//        guard let navVC = self.navigationController else {
+//            NSLog("Does not have navigation controller")
+//            return
+//        }
+//        navVC.pushViewController(contentView, animated: true)
+
+        //Method 2, if let
+//        if let navVC = self.navigationController {
+//            navVC.pushViewController(contentView, animated: true)
+//        }
+
+        //Method 3, force casting
+//        if self.navigationController != nil {
+//            //Not recommeded
+//            self.navigationController!.pushViewController(contentView,
+//                                                          animated: true)
+//        }
+
+        //Method 4, optional
+        self.navigationController?.pushViewController(contentView,
+                                                      animated: true)
     }
 }
