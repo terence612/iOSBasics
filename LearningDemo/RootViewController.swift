@@ -19,6 +19,14 @@ class RootViewController: UIViewController {
         return tmpBtn
     }()
 
+    let safeAreaBtn: UIButton = {
+        let tmpBtn = UIButton(type: .system)
+        tmpBtn.translatesAutoresizingMaskIntoConstraints = false
+        tmpBtn.setTitle("Safe Area VC", for: .normal)
+        tmpBtn.backgroundColor = .random
+        return tmpBtn
+    }()
+
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -27,17 +35,54 @@ class RootViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+//    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        //You can try to put this in viewWillAppear to see the difference
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+
+        self.tabBarController?.tabBar.isHidden = false
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        view.backgroundColor = .red
+        view.backgroundColor = UIColor.init(red: 178/255, green: 235/255, blue: 242/255, alpha: 1)
+
+        pushNavigationBtn.addTarget(
+            self,
+            action: #selector(performPushNavigation(sender:)),
+            for: .touchUpInside
+        )
+
+        safeAreaBtn.addTarget(
+            self,
+            action: #selector(performPushSaveVC),
+            for: .touchUpInside
+        )
+
         view.addSubview(pushNavigationBtn)
 
-        pushNavigationBtn.addTarget(self, action: #selector(performPushNavigation(sender:)), for: .touchUpInside)
+        view.addSubview(safeAreaBtn)
+
+
         pushNavigationBtn.snp.setLabel("pushNavigationBtn")
         pushNavigationBtn.snp.makeConstraints { (make) in
             make.center.equalToSuperview()
+            //make.bottom.equalTo(safeAreaBtn.snp.top).offset(20)
+            //make.bottom.equalTo(safeAreaBtn.snp.top).offset(-20)
+        }
+
+        safeAreaBtn.snp.setLabel("safeAreaBtn")
+        safeAreaBtn.snp.makeConstraints { (make) in
+            //make.top.equalTo(pushNavigationBtn).offset(20)
+            make.top.equalTo(pushNavigationBtn.snp.bottom).offset(20)
+            make.centerX.equalToSuperview()
         }
     }
 
@@ -50,5 +95,10 @@ class RootViewController: UIViewController {
         let contentView = ContentViewController()
         contentView.titleLabel.text = "Content View"
         self.navigationController?.pushViewController(contentView, animated: true)
+    }
+
+    @objc func performPushSaveVC() {
+        let safeAreaVC = SafeAreaViewController()
+        self.navigationController?.pushViewController(safeAreaVC, animated: true)
     }
 }
