@@ -12,6 +12,9 @@
 		0928FBBE2188C0B600E4B09E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0928FBBC2188C0B600E4B09E /* Main.storyboard */; };
 		0928FBC02188C0B800E4B09E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0928FBBF2188C0B800E4B09E /* Assets.xcassets */; };
 		0928FBC32188C0B800E4B09E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0928FBC12188C0B800E4B09E /* LaunchScreen.storyboard */; };
+		09848349218987F500A755FA /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09848348218987F500A755FA /* RootViewController.swift */; };
+		0984834D218991F000A755FA /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0984834C218991F000A755FA /* ContentViewController.swift */; };
+		0984834F218992BB00A755FA /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0984834E218992BB00A755FA /* RootTabBarViewController.swift */; };
 		82077290B0A50312A3C1EB2D /* Pods_LearningDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6AA013DDEA2C88654618DB7 /* Pods_LearningDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +26,9 @@
 		0928FBBF2188C0B800E4B09E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0928FBC22188C0B800E4B09E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0928FBC42188C0B800E4B09E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09848348218987F500A755FA /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		0984834C218991F000A755FA /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		0984834E218992BB00A755FA /* RootTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
 		8394A31A682B637A7B87A1E5 /* Pods-LearningDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LearningDemo/Pods-LearningDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		D6AA013DDEA2C88654618DB7 /* Pods_LearningDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearningDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC8244E3888184ADC4BD4CF2 /* Pods-LearningDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LearningDemo/Pods-LearningDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -67,6 +73,9 @@
 				0928FBBF2188C0B800E4B09E /* Assets.xcassets */,
 				0928FBC12188C0B800E4B09E /* LaunchScreen.storyboard */,
 				0928FBC42188C0B800E4B09E /* Info.plist */,
+				09848348218987F500A755FA /* RootViewController.swift */,
+				0984834C218991F000A755FA /* ContentViewController.swift */,
+				0984834E218992BB00A755FA /* RootTabBarViewController.swift */,
 			);
 			path = LearningDemo;
 			sourceTree = "<group>";
@@ -203,8 +212,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0984834D218991F000A755FA /* ContentViewController.swift in Sources */,
 				0928FBBB2188C0B600E4B09E /* ViewController.swift in Sources */,
 				0928FBB92188C0B600E4B09E /* AppDelegate.swift in Sources */,
+				09848349218987F500A755FA /* RootViewController.swift in Sources */,
+				0984834F218992BB00A755FA /* RootTabBarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
