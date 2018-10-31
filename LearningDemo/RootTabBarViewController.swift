@@ -10,6 +10,7 @@ import UIKit
 
 class RootTabBarViewController: UITabBarController {
     lazy var rootViewController = RootViewController()
+    lazy var tableViewController = TableDemoViewController()
     lazy var rootNavigationViewController = UINavigationController(rootViewController: RootViewController())
 
     init() {
@@ -25,13 +26,14 @@ class RootTabBarViewController: UITabBarController {
 
         // Do any additional setup after loading the view.
         rootViewController.title = "Root View Controller"
+        tableViewController.title = "TableView"
         rootNavigationViewController.title = "Root Navigation View Controller"
 
         //        //image size 60x60
         //        rootViewController.tabBarItem.image = UIImage(named: "publication")
         //        rootNavigationViewController.tabBarItem.image = UIImage(named: "people")
 
-        let tabsViewControllers = [rootViewController,
+        let tabsViewControllers = [tableViewController,
                                    rootNavigationViewController]
 
         self.viewControllers = tabsViewControllers
