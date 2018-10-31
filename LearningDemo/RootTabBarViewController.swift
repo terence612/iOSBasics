@@ -10,7 +10,7 @@ import UIKit
 
 class RootTabBarViewController: UITabBarController {
     lazy var rootViewController = RootViewController()
-    lazy var rootNavigationViewController = UINavigationController(rootViewController: ContentViewController())
+    lazy var rootNavigationViewController = UINavigationController(rootViewController: RootViewController())
 
     init() {
         super.init(nibName: nil, bundle: nil)

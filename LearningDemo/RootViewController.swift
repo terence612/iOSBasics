@@ -7,8 +7,17 @@
 //
 
 import UIKit
+import SnapKit
 
 class RootViewController: UIViewController {
+
+    let pushNavigationBtn: UIButton = {
+        let tmpBtn = UIButton()
+        tmpBtn.translatesAutoresizingMaskIntoConstraints = false
+        tmpBtn.setTitle("Push view", for: .normal)
+        tmpBtn.backgroundColor = UIColor.init(red: 0.1, green: 0.7, blue: 0.4, alpha: 1)
+        return tmpBtn
+    }()
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -23,5 +32,23 @@ class RootViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         view.backgroundColor = .red
+        view.addSubview(pushNavigationBtn)
+
+        pushNavigationBtn.addTarget(self, action: #selector(performPushNavigation(sender:)), for: .touchUpInside)
+        pushNavigationBtn.snp.setLabel("pushNavigationBtn")
+        pushNavigationBtn.snp.makeConstraints { (make) in
+            make.center.equalToSuperview()
+        }
+    }
+
+    @objc func performPushNavigation(sender: UIButton) {
+        print(sender)
+        performPushNavigation()
+    }
+
+    @objc func performPushNavigation() {
+        let contentView = ContentViewController()
+        contentView.titleLabel.text = "Content View"
+        self.navigationController?.pushViewController(contentView, animated: true)
     }
 }

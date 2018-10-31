@@ -10,6 +10,16 @@ import UIKit
 
 class ContentViewController: UIViewController {
 
+    let titleLabel: UILabel = {
+        let tmpLabel = UILabel()
+        tmpLabel.translatesAutoresizingMaskIntoConstraints = false
+        tmpLabel.font = UIFont.systemFont(ofSize: 16)
+        tmpLabel.textColor = UIColor.darkText
+        tmpLabel.textAlignment = .center
+        tmpLabel.numberOfLines = 0
+        return tmpLabel
+    }()
+
     init() {
         super.init(nibName: nil, bundle: nil)
         NSLog("ContentViewController Init")
