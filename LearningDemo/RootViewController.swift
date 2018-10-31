@@ -48,7 +48,8 @@ class RootViewController: UIViewController {
 
     @objc func performPushNavigation() {
         let contentView = ContentViewController()
-        contentView.titleLabel.text = "Content View"
+        contentView.title = "Push from Root View Controller"
+        contentView.titleLabel.text = "Push from Root View Controller"
         self.navigationController?.pushViewController(contentView, animated: true)
     }
 }
