@@ -19,6 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window = UIWindow(frame: UIScreen.main.bounds)
 
+        // 1.
+        let rootVC = RootViewController()
+        // 2.
+        let navigationVC = UINavigationController(rootViewController: RootViewController())
+        // 3.
         let tabVarVC = RootTabBarViewController()
 
         window!.rootViewController = tabVarVC
