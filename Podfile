@@ -8,4 +8,5 @@ target 'LearningDemo' do
   # Pods for LearningDemo
   pod 'SnapKit', '~> 4.0'
   pod 'SDWebImage', '~> 4.4'
+  pod 'SwiftLint'
 end
