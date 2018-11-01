@@ -21,6 +21,7 @@
 		0984835B2189F27300A755FA /* TableDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0984835A2189F27300A755FA /* TableDemoViewController.swift */; };
 		0984835D2189F87400A755FA /* DemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0984835C2189F87400A755FA /* DemoTableViewCell.swift */; };
 		0984835F2189F8EF00A755FA /* DemoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0984835E2189F8EF00A755FA /* DemoImageView.swift */; };
+		09848361218A023600A755FA /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09848360218A023600A755FA /* APIService.swift */; };
 		82077290B0A50312A3C1EB2D /* Pods_LearningDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6AA013DDEA2C88654618DB7 /* Pods_LearningDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		0984835A2189F27300A755FA /* TableDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDemoViewController.swift; sourceTree = "<group>"; };
 		0984835C2189F87400A755FA /* DemoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTableViewCell.swift; sourceTree = "<group>"; };
 		0984835E2189F8EF00A755FA /* DemoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoImageView.swift; sourceTree = "<group>"; };
+		09848360218A023600A755FA /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		8394A31A682B637A7B87A1E5 /* Pods-LearningDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LearningDemo/Pods-LearningDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		D6AA013DDEA2C88654618DB7 /* Pods_LearningDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearningDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC8244E3888184ADC4BD4CF2 /* Pods-LearningDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LearningDemo/Pods-LearningDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				0984834E218992BB00A755FA /* RootTabBarViewController.swift */,
 				098483572189AAB000A755FA /* SafeAreaViewController.swift */,
 				0984835E2189F8EF00A755FA /* DemoImageView.swift */,
+				09848360218A023600A755FA /* APIService.swift */,
 			);
 			path = LearningDemo;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				098483582189AAB000A755FA /* SafeAreaViewController.swift in Sources */,
 				0984835D2189F87400A755FA /* DemoTableViewCell.swift in Sources */,
 				0984835F2189F8EF00A755FA /* DemoImageView.swift in Sources */,
+				09848361218A023600A755FA /* APIService.swift in Sources */,
 				098483562189A55D00A755FA /* CGFloat+Random.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
