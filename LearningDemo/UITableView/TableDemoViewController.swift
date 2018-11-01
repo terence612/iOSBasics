@@ -8,14 +8,32 @@
 
 import UIKit
 
+struct DemoStruct {
+    let content: String
+    let imageUrl: String?
+
+    init?(dict: [String: Any]) {
+
+        guard let tmpContent = dict["content"] as? String else { return nil }
+
+        content = tmpContent
+        imageUrl = dict["imageUrl"] as? String
+    }
+}
+
 class TableDemoViewController: UIViewController {
 
     private let tableView: UITableView = {
         let tmpView = UITableView(frame: .zero)
         tmpView.translatesAutoresizingMaskIntoConstraints = false
-        //tmpView.separatorStyle = .none
+        tmpView.rowHeight = 80
+        //tmpView.rowHeight = UITableView.automaticDimension
+        //tmpView.estimatedRowHeight = 80
+        tmpView.separatorStyle = .none
         return tmpView
     }()
+
+    private var demos: [DemoStruct] = []
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -29,21 +47,54 @@ class TableDemoViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let getDataBtn: UIButton = {
+            let tmpBtn = UIButton(type: .system)
+            tmpBtn.translatesAutoresizingMaskIntoConstraints = false
+            tmpBtn.setTitle("Get Data", for: .normal)
+            tmpBtn.setTitleColor(UIColor.darkGray, for: .normal)
+            tmpBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+            tmpBtn.backgroundColor = UIColor.random
+            return tmpBtn
+        }()
+        getDataBtn.addTarget(self, action: #selector(loadDataSource), for: .touchUpInside)
+
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(DemoTableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 80
+
+        self.view.addSubview(getDataBtn)
         self.view.addSubview(tableView)
+
+
+        getDataBtn.snp.setLabel("getDataBtn")
+        getDataBtn.snp.makeConstraints { (make) in
+            make.leading.trailing.top.equalToSuperview()
+            make.height.equalTo(60)
+        }
 
         tableView.snp.setLabel("tableView")
         tableView.snp.makeConstraints { (make) in
-            make.leading.trailing.top.bottom.equalToSuperview()
+            make.leading.trailing.bottom.equalToSuperview()
+            make.top.equalTo(getDataBtn.snp.bottom)
         }
+
+        loadDataSource()
     }
 
-    func loadDatasource() {
+    @objc func loadDataSource() {
+        APIService.shared.getDataArray(urlStr: "https://api.mockaroo.com/api/717abe10?count=20&key=06b47d10") { (respArray) in
 
+            guard let tmpArray = respArray else { return }
+
+            for respObj in tmpArray {
+                if let dict = respObj as? [String: Any],
+                    let demo = DemoStruct(dict: dict) {
+                    self.demos.append(demo)
+                }
+            }
+
+            self.tableView.reloadData()
+        }
     }
 }
 
@@ -57,15 +108,22 @@ extension TableDemoViewController: UITableViewDelegate {
 extension TableDemoViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return demos.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DemoTableViewCell
-        cell.titleLabel.text = ""
-        cell.demoImageView.backgroundColor = .random
-        cell.backgroundColor = .random
-        //cell.demoImageView.setImage(url: "")
+
+        if indexPath.row < demos.count {
+            let currentDemo = demos[indexPath.row]
+            cell.titleLabel.text = currentDemo.content
+            cell.demoImageView.backgroundColor = .random
+            cell.backgroundColor = .random
+
+            if let imgUrl = currentDemo.imageUrl {
+                cell.demoImageView.setImage(url: imgUrl)
+            }
+        }
         return cell
     }
 }

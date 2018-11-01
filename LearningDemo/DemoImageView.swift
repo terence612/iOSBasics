@@ -19,7 +19,6 @@ class DemoImageView: UIImageView {
         tmpLabel.textAlignment = .center
         tmpLabel.numberOfLines = 0
         tmpLabel.adjustsFontSizeToFitWidth = true
-        tmpLabel.text = "0/0"
         tmpLabel.isHidden = true
         return tmpLabel
     }()
@@ -49,7 +48,7 @@ class DemoImageView: UIImageView {
 
                             DispatchQueue.main.async {
                                 self.sizeToLargeLabel.isHidden = false
-                                self.sizeToLargeLabel.text = "\(Float(receivedSize)/Float(expectedSize))"
+                                self.sizeToLargeLabel.text = "Downloading..."
                             }
 
         }){ (image, error, cacheType, url) in

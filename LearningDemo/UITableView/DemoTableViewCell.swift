@@ -14,7 +14,7 @@ class DemoTableViewCell: UITableViewCell {
     let demoImageView: DemoImageView = {
         let tmpView = DemoImageView()
         tmpView.translatesAutoresizingMaskIntoConstraints = false
-        tmpView.contentMode = .scaleAspectFit
+        tmpView.contentMode = .scaleAspectFill
         tmpView.layer.cornerRadius = 15
         //Try to comment this line
         tmpView.layer.masksToBounds = true
