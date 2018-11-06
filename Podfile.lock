@@ -2,25 +2,29 @@ PODS:
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
+  - SideMenu (5.0.2)
   - SnapKit (4.2.0)
   - SwiftLint (0.27.0)
 
 DEPENDENCIES:
   - SDWebImage (~> 4.4)
+  - SideMenu
   - SnapKit (~> 4.0)
   - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - SDWebImage
+    - SideMenu
     - SnapKit
     - SwiftLint
 
 SPEC CHECKSUMS:
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  SideMenu: e5094f0b2e7d9609e100a90ae69025abd994f882
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
 
-PODFILE CHECKSUM: 47e0fb7c6bcec13907f87f36c474772307686841
+PODFILE CHECKSUM: 901254168800eba935f362d59fe71139b96b41e7
 
 COCOAPODS: 1.5.3

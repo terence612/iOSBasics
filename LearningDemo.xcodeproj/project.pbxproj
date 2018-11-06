@@ -12,6 +12,11 @@
 		0928FBBE2188C0B600E4B09E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0928FBBC2188C0B600E4B09E /* Main.storyboard */; };
 		0928FBC02188C0B800E4B09E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0928FBBF2188C0B800E4B09E /* Assets.xcassets */; };
 		0928FBC32188C0B800E4B09E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0928FBC12188C0B800E4B09E /* LaunchScreen.storyboard */; };
+		0976A78A2191DDFA003656AB /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0976A7892191DDFA003656AB /* WebViewController.swift */; };
+		0976A7922191E9DB003656AB /* SideBarMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0976A78D2191E9DB003656AB /* SideBarMenuItem.swift */; };
+		0976A7932191E9DB003656AB /* SideBarMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0976A78E2191E9DB003656AB /* SideBarMenuViewController.swift */; };
+		0976A7942191E9DB003656AB /* SideBarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0976A7902191E9DB003656AB /* SideBarHeaderView.swift */; };
+		0976A7952191E9DB003656AB /* SideBarMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0976A7912191E9DB003656AB /* SideBarMenuTableViewCell.swift */; };
 		09848349218987F500A755FA /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09848348218987F500A755FA /* RootViewController.swift */; };
 		0984834D218991F000A755FA /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0984834C218991F000A755FA /* ContentViewController.swift */; };
 		0984834F218992BB00A755FA /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0984834E218992BB00A755FA /* RootTabBarViewController.swift */; };
@@ -33,6 +38,11 @@
 		0928FBBF2188C0B800E4B09E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0928FBC22188C0B800E4B09E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0928FBC42188C0B800E4B09E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0976A7892191DDFA003656AB /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		0976A78D2191E9DB003656AB /* SideBarMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarMenuItem.swift; sourceTree = "<group>"; };
+		0976A78E2191E9DB003656AB /* SideBarMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarMenuViewController.swift; sourceTree = "<group>"; };
+		0976A7902191E9DB003656AB /* SideBarHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarHeaderView.swift; sourceTree = "<group>"; };
+		0976A7912191E9DB003656AB /* SideBarMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarMenuTableViewCell.swift; sourceTree = "<group>"; };
 		09848348218987F500A755FA /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		0984834C218991F000A755FA /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		0984834E218992BB00A755FA /* RootTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +91,7 @@
 		0928FBB72188C0B600E4B09E /* LearningDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0976A78B2191E9DB003656AB /* SideBarMenu */,
 				098483592189F26000A755FA /* UITableView */,
 				098483522189A4F900A755FA /* Extensions */,
 				0928FBB82188C0B600E4B09E /* AppDelegate.swift */,
@@ -95,8 +106,36 @@
 				098483572189AAB000A755FA /* SafeAreaViewController.swift */,
 				0984835E2189F8EF00A755FA /* DemoImageView.swift */,
 				09848360218A023600A755FA /* APIService.swift */,
+				0976A7892191DDFA003656AB /* WebViewController.swift */,
 			);
 			path = LearningDemo;
+			sourceTree = "<group>";
+		};
+		0976A78B2191E9DB003656AB /* SideBarMenu */ = {
+			isa = PBXGroup;
+			children = (
+				0976A78C2191E9DB003656AB /* Module */,
+				0976A78E2191E9DB003656AB /* SideBarMenuViewController.swift */,
+				0976A78F2191E9DB003656AB /* Views */,
+			);
+			path = SideBarMenu;
+			sourceTree = "<group>";
+		};
+		0976A78C2191E9DB003656AB /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				0976A78D2191E9DB003656AB /* SideBarMenuItem.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		0976A78F2191E9DB003656AB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0976A7902191E9DB003656AB /* SideBarHeaderView.swift */,
+				0976A7912191E9DB003656AB /* SideBarMenuTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		098483522189A4F900A755FA /* Extensions */ = {
@@ -212,11 +251,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LearningDemo/Pods-LearningDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,17 +290,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0976A7942191E9DB003656AB /* SideBarHeaderView.swift in Sources */,
 				0984834D218991F000A755FA /* ContentViewController.swift in Sources */,
+				0976A7952191E9DB003656AB /* SideBarMenuTableViewCell.swift in Sources */,
 				0928FBBB2188C0B600E4B09E /* ViewController.swift in Sources */,
 				0928FBB92188C0B600E4B09E /* AppDelegate.swift in Sources */,
 				09848349218987F500A755FA /* RootViewController.swift in Sources */,
 				0984835B2189F27300A755FA /* TableDemoViewController.swift in Sources */,
 				098483542189A51200A755FA /* UIColor+Random.swift in Sources */,
+				0976A7932191E9DB003656AB /* SideBarMenuViewController.swift in Sources */,
 				0984834F218992BB00A755FA /* RootTabBarViewController.swift in Sources */,
 				098483582189AAB000A755FA /* SafeAreaViewController.swift in Sources */,
+				0976A7922191E9DB003656AB /* SideBarMenuItem.swift in Sources */,
 				0984835D2189F87400A755FA /* DemoTableViewCell.swift in Sources */,
 				0984835F2189F8EF00A755FA /* DemoImageView.swift in Sources */,
 				09848361218A023600A755FA /* APIService.swift in Sources */,
+				0976A78A2191DDFA003656AB /* WebViewController.swift in Sources */,
 				098483562189A55D00A755FA /* CGFloat+Random.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
