@@ -21,6 +21,11 @@ struct DemoStruct {
     }
 }
 
+protocol TableDemoViewControllerActionDelegate: class {
+    func changeImage(_ image: UIImage?)
+    func changeImage(_ urlString: String)
+}
+
 class TableDemoViewController: UIViewController {
 
     private let tableView: UITableView = {
@@ -34,6 +39,8 @@ class TableDemoViewController: UIViewController {
     }()
 
     private var demos: [DemoStruct] = []
+
+    var actionDelegate: TableDemoViewControllerActionDelegate?
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -101,7 +108,22 @@ class TableDemoViewController: UIViewController {
 
 // MARK: - UITableViewDelegate
 extension TableDemoViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
+        if let cell = tableView.cellForRow(at: indexPath) as? DemoTableViewCell {
+            //Passing image
+            actionDelegate?.changeImage(cell.demoImageView.image)
+        }
+
+        if indexPath.row < demos.count {
+            let currentDemo = demos[indexPath.row]
+
+            //Passing image url
+            if let tmpImageUrl = currentDemo.imageUrl {
+                actionDelegate?.changeImage(tmpImageUrl)
+            }
+        }
+    }
 }
 
 // MAKR: - UITableViewDataSource

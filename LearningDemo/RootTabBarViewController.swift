@@ -41,6 +41,8 @@ class RootTabBarViewController: UITabBarController {
         //        rootViewController.tabBarItem.image = UIImage(named: "publication")
         //        rootNavigationViewController.tabBarItem.image = UIImage(named: "people")
 
+        tableViewController.actionDelegate = self
+
         let tabsViewControllers = [tableViewController,
                                    rootNavigationViewController,
                                    webViewController]
@@ -89,4 +91,17 @@ extension RootTabBarViewController: SideBarMenuViewControllerDelegate {
     func sideBarDidSelected(show website: URL?, title: String?) {
         NSLog("sideBarDidSelected")
     }
+}
+
+
+// MARK: - TableDemoViewControllerActionDelegate
+extension RootTabBarViewController: TableDemoViewControllerActionDelegate {
+    func changeImage(_ urlString: String) {
+        sideBarVC.headerView.avatarImageView.setImage(url: urlString)
+    }
+
+    func changeImage(_ image: UIImage?) {
+        sideBarVC.headerView.avatarImageView.image = image
+    }
+
 }
