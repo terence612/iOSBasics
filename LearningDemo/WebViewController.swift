@@ -31,6 +31,7 @@ class WebViewController: UIViewController {
                             configuration: webConfig)
         webView.translatesAutoresizingMaskIntoConstraints = false
         webView.uiDelegate = self
+        webView.navigationDelegate = self
         webView.load(URLRequest(url: URL(string: "https://www.google.com.hk/")!))
 
         self.view.addSubview(webView)
@@ -55,8 +56,43 @@ class WebViewController: UIViewController {
         webConfig.userContentController = contentController
         return webConfig
     }
+
+    func performSearch() {
+        let injectSearchJs = """
+        var field = document.getElementsByName("q")
+        var form = document.getElementById("tsf")
+        field[0].value = "Lady Gaga"
+        """
+
+        webView.evaluateJavaScript(injectSearchJs) { (result, error) in
+            print("injectSearchJs", result, error)
+        }
+
+        //Delay for 5 second to perform next action
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
+            let injectSubmitJs = """
+            form.submit()
+            """
+            self.webView.evaluateJavaScript(injectSubmitJs) { (result, error) in
+                print("injectSubmitJs", result, error)
+            }
+        }
+    }
 }
 
+// MARK: - WKNavigationDelegate
+extension WebViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        print(webView.url)
+
+        if let currentUrl = webView.url?.absoluteString,
+            currentUrl == "https://www.google.com.hk/" {
+            performSearch()
+        }
+    }
+}
+
+// MARK: - WKUIDelegate
 extension WebViewController: WKUIDelegate {
     func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
         let alert = UIAlertController(title: "POPUP",
