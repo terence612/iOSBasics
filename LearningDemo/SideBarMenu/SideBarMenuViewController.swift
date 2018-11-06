@@ -16,6 +16,7 @@ protocol SideBarMenuViewControllerDelegate: class {
 class SideBarMenuViewController: UIViewController {
 
     weak var delegate: SideBarMenuViewControllerDelegate?
+    static var shared = SideBarMenuViewController()
 
     private let menuBarCellIdentifier = "menuBarCell"
     private let defaultCellIdentifier = "defaultCell"
@@ -39,7 +40,7 @@ class SideBarMenuViewController: UIViewController {
         return tmpTableView
     }()
 
-    init() {
+    private init() {
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -62,6 +63,11 @@ class SideBarMenuViewController: UIViewController {
         setupMenuView()
 
         loadDataSource()
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(setImage(notif:)),
+                                               name: NSNotification.Name.init(rawValue: "SideBarSetImage"),
+                                               object: nil)
+
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -78,6 +84,17 @@ extension SideBarMenuViewController {
 //            let editUrl = URL(string: apiHost + "/profile/")
 //            delegate?.sideBarDidSelected(show: editUrl, title: title)
 //        }
+    }
+
+    @objc func setImage(notif: Notification) {
+        if let userInfo = notif.userInfo,
+            let image = userInfo["image"] as? UIImage {
+            headerView.avatarImageView.image = image
+        }
+    }
+
+    func setHeaderImage(_ image: UIImage?) {
+        headerView.avatarImageView.image = image
     }
 }
 

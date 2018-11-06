@@ -12,7 +12,7 @@ import SideMenu
 class RootTabBarViewController: UITabBarController {
 
     private var menuLeftNavigationController: UISideMenuNavigationController?
-    private let sideBarVC = SideBarMenuViewController()
+    private let sideBarVC = SideBarMenuViewController.shared
 
     lazy var rootViewController = RootViewController()
     lazy var tableViewController = TableDemoViewController()
