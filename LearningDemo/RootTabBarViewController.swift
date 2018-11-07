@@ -17,6 +17,7 @@ class RootTabBarViewController: UITabBarController {
     lazy var rootViewController = RootViewController()
     lazy var tableViewController = TableDemoViewController()
     lazy var webViewController = WebViewController()
+    var scrollViewController = ViewController()
     lazy var collectionViewController = DemoCollectionViewController(name: "Demo")
 
     lazy var rootNavigationViewController = UINavigationController(rootViewController: RootViewController())
@@ -48,7 +49,8 @@ class RootTabBarViewController: UITabBarController {
         let tabsViewControllers = [tableViewController,
                                    rootNavigationViewController,
                                    collectionViewController,
-                                   webViewController]
+                                   webViewController,
+                                   scrollViewController]
 
         self.viewControllers = tabsViewControllers
 
