@@ -27,6 +27,8 @@
 		0984835D2189F87400A755FA /* DemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0984835C2189F87400A755FA /* DemoTableViewCell.swift */; };
 		0984835F2189F8EF00A755FA /* DemoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0984835E2189F8EF00A755FA /* DemoImageView.swift */; };
 		09848361218A023600A755FA /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09848360218A023600A755FA /* APIService.swift */; };
+		09AA20012192F5E900A1AE25 /* DemoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AA20002192F5E900A1AE25 /* DemoCollectionViewController.swift */; };
+		09AA20032192F71E00A1AE25 /* DemoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AA20022192F71E00A1AE25 /* DemoCollectionViewCell.swift */; };
 		82077290B0A50312A3C1EB2D /* Pods_LearningDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6AA013DDEA2C88654618DB7 /* Pods_LearningDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +55,8 @@
 		0984835C2189F87400A755FA /* DemoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTableViewCell.swift; sourceTree = "<group>"; };
 		0984835E2189F8EF00A755FA /* DemoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoImageView.swift; sourceTree = "<group>"; };
 		09848360218A023600A755FA /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		09AA20002192F5E900A1AE25 /* DemoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoCollectionViewController.swift; sourceTree = "<group>"; };
+		09AA20022192F71E00A1AE25 /* DemoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoCollectionViewCell.swift; sourceTree = "<group>"; };
 		8394A31A682B637A7B87A1E5 /* Pods-LearningDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LearningDemo/Pods-LearningDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		D6AA013DDEA2C88654618DB7 /* Pods_LearningDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearningDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC8244E3888184ADC4BD4CF2 /* Pods-LearningDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LearningDemo/Pods-LearningDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -91,6 +95,7 @@
 		0928FBB72188C0B600E4B09E /* LearningDemo */ = {
 			isa = PBXGroup;
 			children = (
+				09AA1FFF2192F5CE00A1AE25 /* UICollectionView */,
 				0976A78B2191E9DB003656AB /* SideBarMenu */,
 				098483592189F26000A755FA /* UITableView */,
 				098483522189A4F900A755FA /* Extensions */,
@@ -154,6 +159,15 @@
 				0984835C2189F87400A755FA /* DemoTableViewCell.swift */,
 			);
 			path = UITableView;
+			sourceTree = "<group>";
+		};
+		09AA1FFF2192F5CE00A1AE25 /* UICollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				09AA20002192F5E900A1AE25 /* DemoCollectionViewController.swift */,
+				09AA20022192F71E00A1AE25 /* DemoCollectionViewCell.swift */,
+			);
+			path = UICollectionView;
 			sourceTree = "<group>";
 		};
 		9CC8346D7DFCA7F5CDE29C93 /* Frameworks */ = {
@@ -295,6 +309,7 @@
 				0976A7952191E9DB003656AB /* SideBarMenuTableViewCell.swift in Sources */,
 				0928FBBB2188C0B600E4B09E /* ViewController.swift in Sources */,
 				0928FBB92188C0B600E4B09E /* AppDelegate.swift in Sources */,
+				09AA20012192F5E900A1AE25 /* DemoCollectionViewController.swift in Sources */,
 				09848349218987F500A755FA /* RootViewController.swift in Sources */,
 				0984835B2189F27300A755FA /* TableDemoViewController.swift in Sources */,
 				098483542189A51200A755FA /* UIColor+Random.swift in Sources */,
@@ -303,6 +318,7 @@
 				098483582189AAB000A755FA /* SafeAreaViewController.swift in Sources */,
 				0976A7922191E9DB003656AB /* SideBarMenuItem.swift in Sources */,
 				0984835D2189F87400A755FA /* DemoTableViewCell.swift in Sources */,
+				09AA20032192F71E00A1AE25 /* DemoCollectionViewCell.swift in Sources */,
 				0984835F2189F8EF00A755FA /* DemoImageView.swift in Sources */,
 				09848361218A023600A755FA /* APIService.swift in Sources */,
 				0976A78A2191DDFA003656AB /* WebViewController.swift in Sources */,

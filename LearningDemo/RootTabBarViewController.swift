@@ -17,6 +17,7 @@ class RootTabBarViewController: UITabBarController {
     lazy var rootViewController = RootViewController()
     lazy var tableViewController = TableDemoViewController()
     lazy var webViewController = WebViewController()
+    lazy var collectionViewController = DemoCollectionViewController(name: "Demo")
 
     lazy var rootNavigationViewController = UINavigationController(rootViewController: RootViewController())
 
@@ -35,6 +36,7 @@ class RootTabBarViewController: UITabBarController {
         rootViewController.title = "Root View Controller"
         tableViewController.title = "TableView"
         rootNavigationViewController.title = "Root Navigation View Controller"
+        collectionViewController.title = "Collection View"
         webViewController.title = "Web View"
 
         //        //image size 60x60
@@ -45,6 +47,7 @@ class RootTabBarViewController: UITabBarController {
 
         let tabsViewControllers = [tableViewController,
                                    rootNavigationViewController,
+                                   collectionViewController,
                                    webViewController]
 
         self.viewControllers = tabsViewControllers
